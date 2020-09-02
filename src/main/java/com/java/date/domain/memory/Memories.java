@@ -19,8 +19,8 @@ public class Memories {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100, nullable = false)
-    private String kinds; //데이터 종류
+    @Column(length = 100)
+    private String kinds; //데이트 종류
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String place; //장소
@@ -28,7 +28,7 @@ public class Memories {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String address; //장소 주소
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT")
     private String explanation; //설명
 
     @Builder
