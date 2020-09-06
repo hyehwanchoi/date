@@ -37,5 +37,12 @@ public class Memories {
         this.place = place;
         this.address = address;
         this.explanation = explanation;
-    }   
+    }
+
+    public void update(String kinds, String place, String address, String explanation) {
+        this.kinds = kinds;
+        this.place = place;
+        this.address = address;
+        this.explanation = explanation;
+    }
 }
