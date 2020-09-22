@@ -43,7 +43,7 @@ public class MemoriesRepositoryTest {
         LocalDateTime now = LocalDateTime.of(2019, 6, 4, 0, 0, 0);
         memoriesRepository.save(Memories.builder()
                                     .kinds("종류")
-                                    .place("장소")
+                                    .place("장소명")
                                     .address("주소")
                                     .explanation("설명")
                                     .build());

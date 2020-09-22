@@ -25,7 +25,7 @@ public class Memories extends BaseTimeEntity {
     private String kinds; //데이트 종류
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String place; //장소
+    private String place; //장소명
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String address; //장소 주소

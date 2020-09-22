@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -33,6 +34,13 @@ public class MemoriesApiController {
     @GetMapping(value="/api/v1/memories/{id}")
     public MemoriesResponseDto findById(@PathVariable Long id) {
         return memoriesService.findById(id);
+    }
+
+    @DeleteMapping("/api/v1/memories/{id}")
+    public Long delete(@PathVariable Long id) {
+        memoriesService.delete(id);
+
+        return id;
     }
     
 }
