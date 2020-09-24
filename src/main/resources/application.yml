@@ -11,3 +11,5 @@ spring:
                 dialect: org.hibernate.dialect.MySQL5InnoDBDialect
                 storage_engine: innodb
         show-sql: true
+    profiles:
+        include: oauth

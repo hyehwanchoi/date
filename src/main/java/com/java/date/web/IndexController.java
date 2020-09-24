@@ -1,5 +1,7 @@
 package com.java.date.web;
 
+import com.java.date.config.auth.LoginUser;
+import com.java.date.config.auth.dto.SessionUser;
 import com.java.date.service.MemoriesService;
 import com.java.date.web.dto.MemoriesResponseDto;
 
@@ -16,10 +18,22 @@ public class IndexController {
     
     private final MemoriesService memoriesService;
 
-    @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("memories", memoriesService.findAllDesc());
+    // @GetMapping("/")
+    // public String index(Model model) {
+    //     model.addAttribute("memories", memoriesService.findAllDesc());
 
+    //     return "index";
+    // }
+    @GetMapping("/")
+    public String index(Model model, @LoginUser SessionUser user) {
+        model.addAttribute("posts", memoriesService.findAllDesc());
+
+        System.out.println("user:"+user);
+        
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+       
         return "index";
     }
 
