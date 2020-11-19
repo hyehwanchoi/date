@@ -14,7 +14,7 @@ public class HelloControllerTest extends AbstractControllerTest {
 
     @Test
     public void goodDate() throws Exception {
-        String date = "Good Date";
+        String date = "Good Date!";
 
         mvc.perform(get("/date"))
             .andExpect(status().isOk())
@@ -23,14 +23,12 @@ public class HelloControllerTest extends AbstractControllerTest {
     }
 
     @Test
-    public void junit5Test() throws Exception {
+    public void junit5Test() {
         assertEquals(2, calculator(1,1), "Yes");
         assertAll("Heading", 
                     () -> assertEquals("John", "John"),
-                    () -> {
-                        assertAll("Heading",
-                            () -> assertEquals("Test", "Test"));
-                    });
+                    () -> assertAll("Heading",
+                        () -> assertEquals("Test", "Test")));
     }
 
     public int calculator(int a, int b) {
